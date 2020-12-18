@@ -1,7 +1,6 @@
-%%
-% Please see https://bitbucket.org/rivanvx/beamer/wiki/Home for obtaining beamer.
-%%
-\documentclass{beamer}
+\documentclass[aspectratio=169]{beamer}
+\usetheme[]{msubeamer}
+\usepackage[T1]{fontenc}
 \usepackage[backend=bibtex,sorting=none]{biblatex}
 \addbibresource{mybeamer.bib} 
 \usepackage{multirow}
@@ -19,9 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \title[Adam-CBO]{A consensus-based global optimization method with adaptive momentum estimation}
-\frame{\titlepage}
-
-
+\maketitleframe
 \begin{frame}
 \frametitle{Machine learning tasks}
 
@@ -351,17 +348,22 @@ f(x) = \frac{1}{n}\sum_{i=1}^n f_i(x) = \frac{1}{n}\sum_{i=1}^n\|\mathcal{N}_x(\
 \subsection{Rastirgin function}
 \begin{frame}
 	\frametitle{Rastrigin function}
-
+\begin{columns}
+\column{0.5\textwidth}
 \begin{equation*}
-	f(x) = \frac{1}{d} \sum_{i=1}^d \left[(x_i-B)^2 -10\cos(2\pi (x_i-B)) + 10\right] + C
+\begin{aligned}
+		f(x) &= \frac{1}{d} \sum_{i=1}^d \left[(x_i-B)^2 \right.\\
+		 &\left.-10\cos(2\pi (x_i-B)) + 10\right] + C
+\end{aligned}
 \end{equation*}
 with $B = \arg \min f(x)$ and $C= \min f(x)$ 
-
+\column{0.5\textwidth}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.6\linewidth]{Figure/R_function}
-	\caption{$d=2$ and $B=C=0$}
-\end{figure}
+	\includegraphics[width=1.1\linewidth]{Figure/R_function}
+	%\caption{$d=2$ and $B=C=0$}
+	\end{figure}
+\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -438,31 +440,14 @@ with $B = \arg \min f(x)$ and $C= \min f(x)$
 		1000& 16000 & 50  & 100\% & 32\%  \\
 		\hline
 	\end{tabular}
-	\caption{Different numbers of particles when the dimension is $1000$}
+	%\caption{Different numbers of particles when the dimension is $1000$}
 	\label{tbl:p_N sr}
 \end{table}
 
-	\begin{table}
-	\centering
-	\begin{tabular}{|c|c|c|c|c|}
-		\hline
-		\multirow{2}*{$d$}&
-		\multirow{2}*{$N$}&
-		\multirow{2}*{$M$}&\multicolumn{2}{c|}{Adam-CBO}\\
-		\cline{4-5}
-		~& ~ & ~ &  $\mathcal{N}(0,1)$& $\mathcal{U}(-1,1)$\\
-		\hline
-		30& 500 &  5  & 94\% & 100\% \\
-		100& 5000 & 5  & 100\% & 94\% \\
-		1000& 10000 & 50  & 100\% & 11\% \\
-		\hline
-	\end{tabular}
-	\caption{Different dimensions when $X^i_t$ is initialized by $0$ ($X^i_0 = 0$)}
-\end{table}
 \end{frame}
 \subsection{Machine learning tasks}
 \begin{frame}
-\frametitle{Spectrail bias \footfullcite{Rahaman2018}/Frequency principle \footfullcite{xu2019frequency}}
+\frametitle{Spectrail bias \cite{Rahaman2018}/Frequency principle \cite{xu2019frequency}}
 
 	\begin{columns}
 	\column{0.5\textwidth}
@@ -480,28 +465,28 @@ with $B = \arg \min f(x)$ and $C= \min f(x)$
 	\column{0.5\textwidth}
 	\begin{figure}[ht]
 		\centering
-		\includegraphics[width=1.1\linewidth]{Figure//Fprinciple_exm1}
+		\includegraphics[width=0.7\linewidth]{Figure//Fprinciple_exm1}
 	\end{figure}	
 	\end{columns}
 
 \end{frame}
 \begin{frame}
-
-	\begin{itemize}
-	\item[] \begin{align*}
+\begin{columns}
+\column{0.5\textwidth}
+	\begin{align*}
 	&u(x) = \left\{\begin{matrix}
 	1   & x < -\frac{7}{8}, x> \frac{7}{8}, -\frac{1}{8}<x<\frac{1}{8}\\
 	-1  & \frac{3}{8}< x< \frac{5}{8} , -\frac{5}{8}< x<- \frac{3}{8}\\
 	0 & \text{otherwise} 
 	\end{matrix} \right.
 	\end{align*}
-	\item[] The same setup as in the previous slide
-	\item[] \begin{figure}[ht]
+	The same setup as in the previous slide
+	\column{0.5\textwidth}
+	\begin{figure}[ht]
 		\centering
 		\includegraphics[width=0.7\linewidth]{Figure//Fprinciple_exm2}
 	\end{figure}		
-	\end{itemize}
-
+\end{columns}
 \end{frame}
 \begin{frame}
 \frametitle{Gradient exploding or vanishing: DNN with fixed width $10$ and different depths}
@@ -562,7 +547,7 @@ with
 	I[u] =& \int_{\Omega}\frac{1}{2}(\nabla u)^T  A(x)  \nabla u(x)\mathrm{d}x + \sum_{i=1}^d\int_{-1}^{1}\delta(x_i)u(x)\mathrm{d}x_i \\ & + \eta \int_{\partial \Omega} (u(x)-g(x))^2 \mathrm{d}x,
 	\end{aligned}
 \end{equation*}	
-
+\tiny{
 \begin{table}[H]
 	\centering
 	\begin{tabular}{|c|c|c|c|c|c|}
@@ -582,6 +567,7 @@ with
 	\end{tabular}
 \caption{Errors in $L^2$ and $L^{\infty}$ norms by Adam and Adam-CBO methods}
 \end{table}	
+}
 \end{frame}
 
 \begin{frame}

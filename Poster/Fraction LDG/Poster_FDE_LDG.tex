@@ -1,8 +1,10 @@
 \documentclass{msuposter}
-
 \usepackage{lipsum}
 \usepackage{multirow}
 \usepackage{tikz,wrapfig}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{arrows}
 \newcommand{\mR}{\mathbb{R}}
 \newcommand{\mN}{\mathbb{N}}
 \newcommand{\cT}{\mathcal{T}}
@@ -37,9 +39,9 @@
 \title{Local discontinuous Galerkin methods with novel basis for fractional diffusion equations with non-smooth solutions}
 \author{\href{http://lylyu.com/}{\textbf{Liyao Lyu}} $^a$,Zheng Chen$^b$}
 \institute{
-$^a$Department of Computational Mathematics, Science and Engineering, Michigan State University
-\\
-$^b$Department of Mathematics, University of Massachusetts
+$^a$Department of Computational Mathematics, Science and Engineering, Michigan State University,
+lyuliyao@msu.edu\\
+$^b$Department of Mathematics, University of Massachusetts Dartmouth, zchen2@umassd.edu
 }
 
 \newcommand{\colwidth}{0.3\linewidth}
@@ -48,6 +50,11 @@ $^b$Department of Mathematics, University of Massachusetts
 \begin{frame}{}
 \begin{columns}[t]
 \begin{column}{\colwidth}
+\begin{block}{Abstract}
+In this paper, we develop a \textbf{novel local discontinuous Galerkin (LDG) methods} for \textbf{fractional diffusion equations} with \textbf{non-smooth solutions}.  
+We consider such problems, for which the solutions are not smooth at boundary, and therefore the traditional LDG methods with piecewise polynomial solutions suffer accuracy degeneracy.  The novel LDG methods utilize a solution information enriched basis, and simulate the problem on a paired special mesh, and \textbf{achieve optimal order of accuracy}. We analyze the $L^2$-stability and optimal error estimate in $L^2$-norm.  
+Finally, numerical examples are presented for validating the theoretical conclusions.
+\end{block}
 \begin{block}{Introduction}
 Consider the equations in the form
 \begin{equation}\label{eqn:problem}
@@ -65,9 +72,9 @@ The equation \eqref{eqn:problem} can be rewritten into the following system
 & p- \sqrt{d}\frac{\partial u(x,t)}{\partial x}=0& \text{in }\Omega_T,
 \end{aligned}
 \end{equation}
-Local discontinuous Galerkin methods were developed for fractional diffusion equations,
-and demonstrated to achieve optimal order of accuracy both theoretically and computationally for smooth enough underlying solutions.
-\textbf{However, the order degeneracy is observed when applied to problems with non-smooth solutions.} Consider solving a non-smooth problem with a solution $u(\cdot\, ,t)\in H^\alpha$, the LDG method using finite element space $V^k$ of piecewise polynomials with degree up to $k$, will achieve an error with a theoretical order $\min\{k+1,\alpha\}$, and the numerical order is observed to be like $\min\{k+1,\alpha+0.5\}$
+Local discontinuous Galerkin methods with regular basis achieve optimal order of accuracy both theoretically and computationally for \textbf{smooth enough underlying solutions}.
+
+\textbf{However, the order $\downarrow$ is observed when applied to problems with non-smooth solutions.} Consider solving a non-smooth problem with a solution $u(\cdot\, ,t)\in H^\alpha$, the LDG method using finite element space $V^k$, will achieve an error with a theoretical order $\min\{k+1,\alpha\}$, and the numerical order is observed to be like $\min\{k+1,\alpha+0.5\}$
 
 \end{block}
 \begin{block}{Novel approximation space and mesh}
@@ -77,42 +84,106 @@ and demonstrated to achieve optimal order of accuracy both theoretically and com
 	w(x) (x-a)^\beta
 	\end{equation} 
 	with some unknown but smooth function $w(x)$.
-	\\
-	Near the end $x=a$, we adopt the mapped polynomial functions $P^k((x-a)^\gamma)$ as basis functions to approximate the solution, with $\frac{1}{\gamma}$ being the smallest positive integer makes $\frac{\beta}{\gamma} \in \mathbb{N}$.  
-	Since $\beta \in (1,2)$, it is clear that $\gamma \in (0,1)$.\\
-	
-	We now define the  finite element space $V^k_{\gamma}$for both trial functions and test functions: 
+In the domain near starting point, the exact solution is considered as a function of the mapped variable $y = (x-a)^{\gamma}$, is a regular function, with $\frac{1}{\gamma}$ being the smallest positive integer makes $\frac{\beta}{\gamma} \in \mathbb{N}$. 
+Therefore,  finite element space $V^k_{\gamma}$for both trial functions and test functions: 
 \begin{equation}\label{eqn:functional basis}
 V^k_{\gamma} = \left\{v: v\bigr\rvert_{I_j} \in P^k((x-a)^{\gamma}), \text{ if } x_j \leq \hat{x};  \, v \bigr\rvert_{I_j}\in P^{k}(x), \text{ otherwise} \right\}.
 \end{equation}
-In the domain near starting point the exact solution, being considered as a function of the mapped variable $y = (x-a)^{\gamma}$, is a regular function.
 In order to deal with ill-conditioned mass matrix, we adopted graded mesh for the cells with irregular mesh.
 \begin{equation}\label{grid:part1}
 \begin{aligned}
-x_j &= a + \left(\frac{b-a}{N} j \right)^{{1/\gamma}};
+&x_j = a + \left(\frac{b-a}{N} j \right)^{{1/\gamma}} & \quad  &\text{for }  j \leq n,\\
+&x_j = b - (M-j)\frac{b-a}{N} & \quad & \text{for } n < j \leq M,
 \end{aligned}
 \end{equation}
-for $n < j \leq M$,
-\begin{equation}\label{grid:part2}
-x_j = b - (M-j)\frac{b-a}{N}.s
-\end{equation}
+
+\centering{
+\begin{tikzpicture}[
+    scale=25,
+    axis/.style={very thick, ->, >=stealth'},
+    important line/.style={thick},
+    dashed line/.style={dashed, thin},
+    pile/.style={thick, ->, >=stealth', shorten <=2pt, shorten
+    >=2pt},
+    every node/.style={color=black}
+    ]
+%画x和y轴坐标
+\draw[axis,line width=3pt] (-0.1,0)  -> (1.1,0) node(xline)[right]
+        {$x$};
+\draw[axis,line width=3pt] (-0.1,-0.3)  -> (0.6,-0.3) node(xline)[right]
+        {$y = (x-a)^\gamma$};
+\coordinate (label1) at(-0.1,0.1);
+\coordinate (label2) at(-0.1,-0.2);
+\coordinate (a) at (0,0);%画刻度
+\coordinate (x) at (1/4,0);%画刻度
+\coordinate (xj) at (5/8,0);%画刻度
+\coordinate (xj1) at (6/8,0);%画刻度
+\coordinate (yj) at (2/8,-0.3);%画刻度
+\coordinate (yj1) at (3/8,-0.3);%画刻度
+\coordinate (ba1) at (1/8,0.1);
+\coordinate (ba2) at (5/8,0.1);
+\coordinate (b) at (1,0);
+\coordinate (y0) at (0,-0.3);
+\coordinate (hy) at (0.5,-0.3);
+\draw (label1) node[above] {Basis};
+\draw (label2) node[above] {Basis};
+\draw (a) node[below] {$a$} -- ++(0, 0.8 pt) ; 
+\draw (x) node[below] {$\hat{x}$} -- ++(0, 0.8 pt) ;
+\draw (ba1) node[above] {$P^k((x-a)^\gamma)$};
+\draw (xj) node[below] {$x_j$} -- ++(0, 0.8 pt) ; 
+\draw (xj1) node[below] {$x_{j+1}$} -- ++(0, 0.8 pt) ;
+\draw (yj) node[below] {$y_j$} -- ++(0, 0.8 pt) ; 
+\draw (yj1) node[below] {$y_{j+1}$} -- ++(0, 0.8 pt) ;
+\draw[decorate,decoration={brace,raise=8pt,amplitude=6mm},line width=3pt] (xj) -- (xj1);
+\draw[decorate,decoration={brace,raise=8pt,amplitude=6mm},line width=3pt] (yj) -- (yj1);
+\draw (b) node[below] {$b$} -- ++(0, 0.8 pt) ;
+\draw node[above] at (1/4,-0.2) {$P^k(y)$};
+\draw (ba2) node[above] {$P^k(x)$};
+\draw (y0) node[below] {$0$} -- ++(0, 0.8 pt) ; 
+\draw (hy) node[below] {$(\hat{x}-a)^\gamma$} -- ++(0, 0.8 pt) ; 
+\draw[->,line width = 3 pt,red] (1/16,-0.1)  -- (1/16,-0.2);
+\draw[line width =  4 pt, red] (0,0) -- (1/4,0);
+\draw[line width =  4 pt, red] (y0) -- (hy);
+\draw node[above] at (11/16,0.05) {h};
+\draw node[above] at (5/16,-0.25) {h};
+\draw node[right,red] at (1/16,-0.15) {map};
+\end{tikzpicture}
+}
+
+
+
 \end{block}
-\begin{block}{Semi-defined LDG scheme} 
-The semi-discrete LDG scheme to solve systemx is defined as follows. 
-Find $\uh, \qh, \ph \in V^k_\gamma$ such that, for all test functions $v, w, z \in V^k_\gamma$ and all $j=1,2,\dots,M$, we have
-\begin{equation}\label{eqn:Numerical Scheme}
-\begin{aligned}
-\left(\frac{\partial \uh(x,t)}{\partial t},\,v(x) \right)_{I_j} +\sqrt{d}\left(\qh(x,t),\,\frac{\partial v(x)}{\partial x}\right)_{I_j} - \sqrt{d}\qhat(x,t) v(x)\Bigr\rvert_{x_{j-1}^+}^{x_j^-}&=(f(x,t),\,v(x))_{I_j},\\
-\left( \qh(x,t),\,w(x)\right)_{I_j} - (_{a}D_x^{\beta-2}\ph(x,t),\,w(x))_{I_j}&=0, \\
-\left(\ph(x,t),\,z(x)\right)_{I_j} +\sqrt{d}\left(\uh(x,t),\,\frac{\partial z(x)}{\partial x}\right)_{I_j} -\sqrt{d} \uhat(x,t)z(x)\Bigr\rvert_{x_{j-1}^+}^{x_j^-}&=0,
-\end{aligned}
-\end{equation}
-\end{block}
+
 \end{column}
 
 
 
 \begin{column}{\colwidth}
+\begin{exampleblock}{Numerical test when $\gamma = 0.5$}
+	Consider equation 
+	\begin{equation}\label{eqn:exm1}
+	\begin{aligned}
+	\frac{\partial u(x,t)}{\partial t} = \frac{2 }{3\Gamma(1.5)} \frac{\partial ^{1.5} u(x,t)}{\partial x^{1.5}} - e^{-t} (x^{1.5} +1),\quad x \in (0,1),
+	\end{aligned}
+	\end{equation}
+ on the computational domain $x\in \Omega =(0,1)$ with initial condition$u_0(x) = x^{1.5}$
+	and Dirichlet boundary conditions. The exact solution is $u(x,t) = e^{-t}x^{1.5}$. 
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{Figure1}
+\end{figure}
+\end{exampleblock}
+\begin{block}{Semi-defined LDG scheme} 
+The semi-discrete LDG scheme to solve systemx is defined as follows. 
+Find $\uh, \qh, \ph \in V^k_\gamma$ such that, for all test functions $v, w, z \in V^k_\gamma$ and all $j=1,2,\dots,M$, we have
+\begin{equation*}\label{eqn:Numerical Scheme}
+\begin{aligned}
+\left(\frac{\partial \uh(x,t)}{\partial t},\,v(x) \right)_{I_j} +\sqrt{d}\left(\qh(x,t),\,\frac{\partial v(x)}{\partial x}\right)_{I_j} - \sqrt{d}\qhat(x,t) v(x)\Bigr\rvert_{x_{j-1}^+}^{x_j^-}&=(f(x,t),\,v(x))_{I_j},\\
+\left( \qh(x,t),\,w(x)\right)_{I_j} - (_{a}D_x^{\beta-2}\ph(x,t),\,w(x))_{I_j}&=0, \\
+\left(\ph(x,t),\,z(x)\right)_{I_j} +\sqrt{d}\left(\uh(x,t),\,\frac{\partial z(x)}{\partial x}\right)_{I_j} -\sqrt{d} \uhat(x,t)z(x)\Bigr\rvert_{x_{j-1}^+}^{x_j^-}&=0,
+\end{aligned}
+\end{equation*}
+\end{block}
 \begin{block}{Alternating fluxes}
 Here, we use the so-called ``alternating fluxes", which is a popular and attractive choice and defined as
 \begin{equation}\label{eqn:Numerical Flux1 inner}
@@ -141,7 +212,6 @@ and
 \end{equation}
 which reflect the Dirichlet boundary conditions. 
 \end{block}
-
 \begin{theorem}[$L^2$ stability]
 	The scheme \eqref{eqn:Numerical Scheme} is $L^2$ stable, and the solutions satisfies, for all $t\in [0,T]$, 
 	
@@ -153,6 +223,25 @@ which reflect the Dirichlet boundary conditions.
 	\end{aligned}
 	\end{equation}
 \end{theorem}
+\end{column}
+
+
+
+\begin{column}{\colwidth}
+\begin{exampleblock}{Numerical test when $\gamma = 	\frac{1}{3}$}
+Consider 
+	\begin{equation}
+	\begin{aligned}
+	\frac{\partial u(x,t)}{\partial t} = \frac{9\sqrt{3}\Gamma(\frac{2}{3}) }{8\pi} \frac{\partial ^{\frac{4}{3}} u(x,t)}{\partial x^{\frac{4}{3}}} - e^{-t} (x^{\frac{4}{3}} +1)
+	\end{aligned}
+	\end{equation}
+ on the computational domain $x\in \Omega =(0,1)$ with initial condition$u_0(x) = x^{\frac{4}{3}}$
+	and Dirichlet boundary conditions. The exact solution is $u(x,t) = e^{-t}x^{\frac{4}{3}}$. 
+
+	\begin{figure}
+\includegraphics[width=0.8\linewidth]{Figure2}
+\end{figure}
+\end{exampleblock}
 	
 \begin{theorem}[Error Estimation]\label{thm:accuracy}
 	The error for the scheme \eqref{eqn:Numerical Scheme} with flux \eqref{eqn:Numerical Flux1 inner} or \eqref{eqn:Numerical Flux2 inner} and \eqref{eqn:Numerical Flux \uh BC}-\eqref{eqn:Numerical Flux \qh BC} satisfies
@@ -161,123 +250,19 @@ which reflect the Dirichlet boundary conditions.
 	\end{equation}
 \end{theorem}
 
-\begin{exampleblock}{$\gamma = 0.5$}
-	Consider equation 
-	\begin{equation}\label{eqn:exm1}
-	\begin{aligned}
-	\frac{\partial u(x,t)}{\partial t} = \frac{2 }{3\Gamma(1.5)} \frac{\partial ^{1.5} u(x,t)}{\partial x^{1.5}} - e^{-t} (x^{1.5} +1),\quad x \in (0,1),
-	\end{aligned}
-	\end{equation}
- on the computational domain $x\in \Omega =(0,1)$. 
-	Given initial condition
-	\begin{equation}\label{eqn:initial condition for exm1}
-	u_0(x) = x^{1.5},
-	\end{equation}
-	and Dirichlet boundary conditions
-	\begin{equation}\label{eqn:boundary condition for exm}
-	u(0,t)= 0, \quad u(1,t) =e^{-t}, 
-	\end{equation}
-	the exact solution is $u(x,t) = e^{-t}x^{1.5}$. 
-	\begin{table}
-		\centering
-		\caption{The error and order of convergence with space $V^1$ on uniform mesh and $V^1_{1/2}$ at $T= 1$.}
-		\label{tbl:result k1 beta0.5}
-		\begin{tabular}{|c||ll||c||ll|}
-			\hline
-			\multirow{2}*{$h$}  & \multicolumn{2}{|c|}{$V^1$}  & \multirow{2}*{$h$} & \multicolumn{2}{|c|}{$V^1_{1/2}$ }   \\
-			\cline{2-3}
-			\cline{5-6}
-			~ & error & order & ~ & error & order\\
-			\hline
-			1/8 & 7.13e-04 & &1/4& 2.41e-03 &\\
-			1/16 & 1.82e-04&1.97 & 1/8 &6.17e-04 &1.96 \\
-			1/32 & 4.70e-05&1.95 & 1/16 &1.41e-04 &2.12  \\
-			1/64 & 1.23e-05&1.92 & 1/32 & 3.46e-05 & 2.03\\
-			1/128&3.23e-06& 1.93 & 1/64 & 8.73e-06 & 1.98\\
-			\hline
-		\end{tabular}
-	\end{table}
-	
-	\begin{table}
-		\centering
-		\caption{The error and order of convergence for LDG methods with space $V^2$ on uniform mesh and $V^2_{1/2}$ at $T= 1$.}
-		\label{tbl:result k2 beta0.5}
-		\begin{tabular}{|c||ll||c||ll|}
-			\hline
-			\multirow{2}*{$h$}  & \multicolumn{2}{|c|}{$V^2$ } & \multirow{2}*{$h$} & \multicolumn{2}{|c|}{$V^2_{1/2}$}   \\
-			\cline{2-3}
-			\cline{5-6}
-			~ & error & order & ~ & error & order\\
-			\hline
-			1/8 & 6.27e-05 & & 1/4 & 9.85e-05 &\\
-			1/16 & 1.48e-05& 2.07 & 1/8 &1.17e-05 &3.06 \\
-			1/32 & 3.65e-06&2.02& 1/16 & 1.42e-06 &3.03 \\
-			\hline
-			\end{tabular}
-	\end{table}
-	
-\end{exampleblock}
-
-\end{column}
-\begin{column}{\colwidth}
-\begin{exampleblock}{}
-\begin{figure}
-\includegraphics[width=0.5\linewidth]{Figure1}
-\end{figure}
-\end{exampleblock}
-
-\begin{exampleblock}{$\gamma = 	\frac{1}{3}$}
-Consider 
-	\begin{equation}
-	\begin{aligned}
-	\frac{\partial u(x,t)}{\partial t} = \frac{9\sqrt{3}\Gamma(\frac{2}{3}) }{8\pi} \frac{\partial ^{\frac{4}{3}} u(x,t)}{\partial x^{\frac{4}{3}}} - e^{-t} (x^{\frac{4}{3}} +1)
-	\end{aligned}
-	\end{equation}
-	in $\Omega = (0,1)$ with exact solution $u(x)= e^{-t} x^{\frac{4}{3}}$. 
-\begin{table}
-		\centering
-		\caption{The error and order of convergence for LDG methods solving problem with $V^1$ on uniform mesh and $V^1_{1/3}$ on the same mesh as before, {at $T= 0.1$ with cfl $=0.0001$}.}
-		\label{tbl:result k1 beta1/3}
-		\begin{tabular}{|c|ll||c|ll|}
-			\hline
-			\multirow{2}*{$h$}  & \multicolumn{2}{|c||}{$V^1$}  & \multirow{2}*{$h$}  & \multicolumn{2}{|c|}{$V^1_{1/3}$}   \\
-			\cline{2-3} 
-			\cline{5-6}
-			~ & error & order & ~ & error & order \\
-			\hline
-			1/8 & 1.44e-3& & 1/4 & 6.23e-03 & \\
-			1/16& 4.14e-4& 1.80 & 1/8 & 1.76e-03 & 1.82 \\
-			1/24& 1.98e-4& 1.81& 1/12 & 7.47e-04 & 2.12 \\
-			1/32& 1.18e-4& 1.79& 1/16 & 4.22e-04 & 1.98 \\
-			1/40& 7.89e-5& 1.81& 1/20 & 2.64e-04 & 2.09 \\
-			1/48& 5.65e-5& 1.82& 1/24  & 1.85e-04 & 1.96 \\
-			\hline
-		\end{tabular}		
-	\end{table}
-%	
-	\begin{table}
-		\centering
-		\caption{The error and order of convergence for LDG methods solving problem with $V^1$ on uniform mesh and $V^1_{1/3}$ on the same mesh as before, {at $T= 0.1$ with cfl $=0.0001$}.}
-		\label{tbl:result k2 beta1/3}
-		\begin{tabular}{|c|ll||c|ll|}
-			\hline
-			\multirow{2}*{$h$}  & \multicolumn{2}{|c||}{$V^2$}  & \multirow{2}*{$h$}  & \multicolumn{2}{|c|}{$V^2_{1/3}$}   \\
-			\cline{2-3} 
-			\cline{5-6}
-			~ & error & order & ~ & error & order \\
-			\hline
-			1/8 & 2.10e-04 &  &1/4 & 5.19e-04 & \\
-			1/16& 5.82e-05 & 1.85  &1/8 & 5.55e-05 & 3.21\\
-			1/24& 2.78e-05 & 1.82  &1/12 & 1.58e-05 & 3.07\\
-			1/32& 1.65e-05 & 1.81  &1/16 & 7.25e-06 & 2.82\\
-			1/40& 1.11e-05 & 1.74  & 1/20 & 2.15e-06 & 2.49\\
-			\hline
-		\end{tabular}
-	\end{table}
-	\begin{figure}
-\includegraphics[width=0.5\linewidth]{Figure2}
-\end{figure}
-\end{exampleblock}
+\begin{block}{Conclusion}
+We design a novel LDG method for spatial fractional diffusion equations with \textbf{weakly singular solutions} and obtain \textbf{optimal convergence rate}.
+The key points are to build the singular information into finite element space, and modify the mesh with graded cells near the singularity to overcome the ill-condition mass matrix. 
+Both stability and error estimation have been established. 
+The global nature of the fractional operator makes computational cost really high, but the proposed approximation space gives optimal order of accuracy, and thus reduces the mesh size for same level of accuracy. 
+However, the regularity of solution needs to be estimated ahead of time to choose a suitable approximation space.
+In this paper, we deal with the cases with fractional order, that is $\beta  = \frac{p}{q}$ for some integers $p$ and $q$.  
+In the future, we plan to extend the work to more general cases.   
+The methodology has potential to be applied to other fractional differential equations or any PDEs with such singular solutions, and this is also part of our future work. 
+\end{block}
+\begin{block}{Reference}
+Liyao Lyu, Zheng Chen. 2020. "Local discontinuous Galerkin methods with novel basis for fractional diffusion equations with non-smooth solutions."  Communications on Applied Mathematics and Computation.10.1007/s42967-020-00104-3
+\end{block}
 \end{column}
 \end{columns}	
 \end{frame}

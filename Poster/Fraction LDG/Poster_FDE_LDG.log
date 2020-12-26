@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.12)  19 DEC 2020 00:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.12)  26 DEC 2020 09:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -973,51 +973,79 @@ File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 \WF@everypar=\toks51
 Package: wrapfig 2003/01/31  v 3.6
 )
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.pathreplacing.code.tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarydecorations.code.tex
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/modules/pgfmoduledecoration
+s.code.tex
+\pgfdecoratedcompleteddistance=\dimen307
+\pgfdecoratedremainingdistance=\dimen308
+\pgfdecoratedinputsegmentcompleteddistance=\dimen309
+\pgfdecoratedinputsegmentremainingdistance=\dimen310
+\pgf@decorate@distancetomove=\dimen311
+\pgf@decorate@repeatstate=\count342
+\pgfdecorationsegmentamplitude=\dimen312
+\pgfdecorationsegmentlength=\dimen313
+)
+\tikz@lib@dec@box=\box81
+)
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/decorations/pgfli
+brarydecorations.pathreplacing.code.tex))
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+
+(/usr/local/texlive/2020/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex
+File: pgflibraryarrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
+\arrowsize=\dimen314
+))
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 38.
+(hyperref)                removing `math shift' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 38.
+(hyperref)                removing `superscript' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 38.
+(hyperref)                removing `math shift' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 38.
+(hyperref)                removing `math shift' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `superscript' on input line 38.
+(hyperref)                removing `superscript' on input line 40.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 38.
+(hyperref)                removing `math shift' on input line 40.
 
 (./Poster_FDE_LDG.aux)
 \openout1 = `Poster_FDE_LDG.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 47.
-LaTeX Font Info:    ... okay on input line 47.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 LaTeX Font Info:    Trying to load font information for T1+lmss on input line 4
-7.
+9.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1058,16 +1086,16 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 (/usr/local/texlive/2020/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count342
-\scratchdimen=\dimen307
-\scratchbox=\box81
-\nofMPsegments=\count343
-\nofMParguments=\count344
+\scratchcounter=\count343
+\scratchdimen=\dimen315
+\scratchbox=\box82
+\nofMPsegments=\count344
+\nofMParguments=\count345
 \everyMPshowfont=\toks52
-\MPscratchCnt=\count345
-\MPscratchDim=\dimen308
-\MPnumerator=\count346
-\makeMPintoPDFobject=\count347
+\MPscratchCnt=\count346
+\MPscratchDim=\dimen316
+\MPnumerator=\count347
+\makeMPintoPDFobject=\count348
 \everyMPtoPDFconversion=\toks53
 ) (/usr/local/texlive/2020/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1079,8 +1107,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box82
-Package hyperref Info: Link coloring OFF on input line 47.
+\AtBeginShipoutBox=\box83
+Package hyperref Info: Link coloring OFF on input line 49.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1092,61 +1120,61 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count348
+\c@section@level=\count349
 )
-LaTeX Info: Redefining \ref on input line 47.
-LaTeX Info: Redefining \pageref on input line 47.
-LaTeX Info: Redefining \nameref on input line 47.
+LaTeX Info: Redefining \ref on input line 49.
+LaTeX Info: Redefining \pageref on input line 49.
+LaTeX Info: Redefining \nameref on input line 49.
  (./Poster_FDE_LDG.out) (./Poster_FDE_LDG.out)
 \@outlinefile=\write5
 \openout5 = `Poster_FDE_LDG.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 47.
+(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 49.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 47.
+(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 49.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 47.
+(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 49.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 47.
+(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 49.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 47.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 47.
+(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 49.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 47.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 47.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 47.
+(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 49.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 47.
+(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 47.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 47.
+(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 49.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 47.
+(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 47.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 47.
+(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 49.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 47.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 47.
+(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 49.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 47.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 49.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 47.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 47.
+(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 47.
+(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 47.
+(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 47.
+(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 49.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 47.
+(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 49.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/translator/translator-basic-dicti
 onary-English.dict
@@ -1172,45 +1200,45 @@ Dictionary: translator-numbers-dictionary, Language: English
 tionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 ) (./Poster_FDE_LDG.nav)
-LaTeX Font Info:    Calculating math sizes for size <58.05> on input line 47.
+LaTeX Font Info:    Calculating math sizes for size <58.05> on input line 49.
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-47.
+49.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4
-7.
+9.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-47.
+49.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <58.05> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <40.63481> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <29.025> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
-LaTeX Font Info:    Calculating math sizes for size <48.37> on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
+LaTeX Font Info:    Calculating math sizes for size <48.37> on input line 49.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <48.37> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <33.85884> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <24.185> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
-LaTeX Font Info:    Calculating math sizes for size <16.2> on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
+LaTeX Font Info:    Calculating math sizes for size <16.2> on input line 49.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <16.2> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <11.33994> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8.09999> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 47.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 49.
 Package epstopdf Info: Source file: <MSU-Wordmark-White.eps>
 (epstopdf)                    date: 2020-10-27 00:12:24
 (epstopdf)                    size: 446502 bytes
@@ -1219,71 +1247,68 @@ Package epstopdf Info: Source file: <MSU-Wordmark-White.eps>
 (epstopdf)                    size: 9027 bytes
 (epstopdf)             Command: <repstopdf --outfile=MSU-Wordmark-White-eps-con
 verted-to.pdf MSU-Wordmark-White.eps>
-(epstopdf)             \includegraphics on input line 47.
+(epstopdf)             \includegraphics on input line 49.
 Package epstopdf Info: Output file is already uptodate.
 <MSU-Wordmark-White-eps-converted-to.pdf, id=14, 325.215pt x 108.405pt>
 File: MSU-Wordmark-White-eps-converted-to.pdf Graphic file (type pdf)
 <use MSU-Wordmark-White-eps-converted-to.pdf>
 Package pdftex.def Info: MSU-Wordmark-White-eps-converted-to.pdf  used on input
- line 47.
+ line 49.
 (pdftex.def)             Requested size: 890.37137pt x 296.8145pt.
-LaTeX Font Info:    Calculating math sizes for size <33.59> on input line 283.
+LaTeX Font Info:    Calculating math sizes for size <33.59> on input line 268.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <33.59> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 268.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <23.5129> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 268.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <16.795> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 28
-3.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 268.
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 26
+8.
 
 (/usr/local/texlive/2020/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Calculating math sizes for size <40.31> on input line 283.
+LaTeX Font Info:    Calculating math sizes for size <40.31> on input line 268.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <40.31> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 268.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <28.21687> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 268.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <20.155> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
-LaTeX Font Info:    Calculating math sizes for size <28> on input line 283.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <28> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <19.59991> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <14> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 283.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 268.
 Package epstopdf Info: Source file: <Figure1.eps>
-(epstopdf)                    date: 2020-12-19 00:05:29
-(epstopdf)                    size: 33026 bytes
+(epstopdf)                    date: 2020-12-24 14:51:23
+(epstopdf)                    size: 33706 bytes
 (epstopdf)             Output file: <Figure1-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-12-19 00:06:08
-(epstopdf)                    size: 11562 bytes
+(epstopdf)                    date: 2020-12-24 14:51:39
+(epstopdf)                    size: 12016 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure1-eps-converted-to.p
 df Figure1.eps>
-(epstopdf)             \includegraphics on input line 283.
+(epstopdf)             \includegraphics on input line 268.
 Package epstopdf Info: Output file is already uptodate.
-<Figure1-eps-converted-to.pdf, id=23, 504.88625pt x 395.4775pt>
+<Figure1-eps-converted-to.pdf, id=17, 504.88625pt x 395.4775pt>
 File: Figure1-eps-converted-to.pdf Graphic file (type pdf)
 <use Figure1-eps-converted-to.pdf>
-Package pdftex.def Info: Figure1-eps-converted-to.pdf  used on input line 283.
-(pdftex.def)             Requested size: 598.53828pt x 468.84389pt.
+Package pdftex.def Info: Figure1-eps-converted-to.pdf  used on input line 268.
+(pdftex.def)             Requested size: 957.6649pt x 750.15385pt.
 Package epstopdf Info: Source file: <Figure2.eps>
-(epstopdf)                    date: 2020-12-19 00:05:31
-(epstopdf)                    size: 36357 bytes
+(epstopdf)                    date: 2020-12-24 14:51:24
+(epstopdf)                    size: 37038 bytes
 (epstopdf)             Output file: <Figure2-eps-converted-to.pdf>
-(epstopdf)                    date: 2020-12-19 00:06:09
-(epstopdf)                    size: 12817 bytes
+(epstopdf)                    date: 2020-12-24 14:51:40
+(epstopdf)                    size: 13264 bytes
 (epstopdf)             Command: <repstopdf --outfile=Figure2-eps-converted-to.p
 df Figure2.eps>
-(epstopdf)             \includegraphics on input line 283.
+(epstopdf)             \includegraphics on input line 268.
 Package epstopdf Info: Output file is already uptodate.
-<Figure2-eps-converted-to.pdf, id=24, 508.90125pt x 395.4775pt>
+<Figure2-eps-converted-to.pdf, id=19, 508.90125pt x 395.4775pt>
 File: Figure2-eps-converted-to.pdf Graphic file (type pdf)
 <use Figure2-eps-converted-to.pdf>
-Package pdftex.def Info: Figure2-eps-converted-to.pdf  used on input line 283.
-(pdftex.def)             Requested size: 598.53828pt x 465.15681pt.
+Package pdftex.def Info: Figure2-eps-converted-to.pdf  used on input line 268.
+(pdftex.def)             Requested size: 957.6649pt x 744.25212pt.
+
+Overfull \vbox (36.51782pt too high) detected at line 268
+ []
+
 Package epstopdf Info: Source file: <MSU-Wordmark-White.eps>
 (epstopdf)                    date: 2020-10-27 00:12:24
 (epstopdf)                    size: 446502 bytes
@@ -1292,14 +1317,14 @@ Package epstopdf Info: Source file: <MSU-Wordmark-White.eps>
 (epstopdf)                    size: 9027 bytes
 (epstopdf)             Command: <repstopdf --outfile=MSU-Wordmark-White-eps-con
 verted-to.pdf MSU-Wordmark-White.eps>
-(epstopdf)             \includegraphics on input line 283.
+(epstopdf)             \includegraphics on input line 268.
 Package epstopdf Info: Output file is already uptodate.
 File: MSU-Wordmark-White-eps-converted-to.pdf Graphic file (type pdf)
 <use MSU-Wordmark-White-eps-converted-to.pdf>
 Package pdftex.def Info: MSU-Wordmark-White-eps-converted-to.pdf  used on input
- line 283.
+ line 268.
 (pdftex.def)             Requested size: 890.37137pt x 296.8145pt.
- [1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+[1{/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
  <./MSU-Wordmark-White-eps-converted-to.pdf> <./Figure1-eps-converted-to.pdf> <
 ./Figure2-eps-converted-to.pdf>]
@@ -1312,22 +1337,22 @@ Package pdftex.def Info: MSU-Wordmark-White-eps-converted-to.pdf  used on input
 \tf@snm=\write8
 \openout8 = `Poster_FDE_LDG.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 284.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 284.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 269.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 269.
  (./Poster_FDE_LDG.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 284.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 284.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 269.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 269.
 Package rerunfilecheck Info: File `Poster_FDE_LDG.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 23701 strings out of 480608
- 462294 string characters out of 5903630
- 932528 words of memory out of 5000000
- 38954 multiletter control sequences out of 15000+600000
- 775133 words of font info for 194 fonts, out of 8000000 for 9000
+ 24821 strings out of 480608
+ 495075 string characters out of 5903630
+ 953024 words of memory out of 5000000
+ 40062 multiletter control sequences out of 15000+600000
+ 737215 words of font info for 167 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 65i,21n,77p,780b,1003s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 65i,21n,77p,799b,1334s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
 texlive/2020/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/20
 20/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2020/texmf-dist/
@@ -1339,10 +1364,10 @@ fonts/enc/dvips/lm/lm-mathit.enc}</usr/local/texlive/2020/texmf-dist/fonts/type
 ocal/texlive/2020/texmf-dist/fonts/type1/public/lm/lmsso17.pfb></usr/local/texl
 ive/2020/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2020/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Poster_FDE_LDG.pdf (1 page, 152398 bytes).
+Output written on Poster_FDE_LDG.pdf (1 page, 154961 bytes).
 PDF statistics:
- 115 PDF objects out of 1000 (max. 8388607)
- 90 compressed objects within 1 object stream
- 25 named destinations out of 1000 (max. 500000)
+ 106 PDF objects out of 1000 (max. 8388607)
+ 81 compressed objects within 1 object stream
+ 18 named destinations out of 1000 (max. 500000)
  58 words of extra memory for PDF output out of 10000 (max. 10000000)
 

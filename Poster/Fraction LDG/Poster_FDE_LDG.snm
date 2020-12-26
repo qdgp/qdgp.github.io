@@ -4,7 +4,7 @@
 \beamer@slide {func:solution form}{1}
 \beamer@slide {eqn:functional basis}{1}
 \beamer@slide {grid:part1}{1}
-\beamer@slide {grid:part2}{1}
+\beamer@slide {eqn:exm1}{1}
 \beamer@slide {eqn:Numerical Scheme}{1}
 \beamer@slide {eqn:Numerical Flux1 inner}{1}
 \beamer@slide {eqn:Numerical Flux2 inner}{1}
@@ -13,10 +13,3 @@
 \beamer@slide {eqn:Stability theorem}{1}
 \beamer@slide {thm:accuracy}{1}
 \beamer@slide {eqn:accuracy thm}{1}
-\beamer@slide {eqn:exm1}{1}
-\beamer@slide {eqn:initial condition for exm1}{1}
-\beamer@slide {eqn:boundary condition for exm}{1}
-\beamer@slide {tbl:result k1 beta0.5}{1}
-\beamer@slide {tbl:result k2 beta0.5}{1}
-\beamer@slide {tbl:result k1 beta1/3}{1}
-\beamer@slide {tbl:result k2 beta1/3}{1}
